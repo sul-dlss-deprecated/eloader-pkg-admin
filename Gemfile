@@ -36,6 +36,12 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
+  # Rubocop is a static code analyzer to enforce style.
+  gem 'rubocop', require: false
+  # scss-lint will test the scss files to enforce styles
+  gem 'scss_lint', require: false
+  # Capybara for feature/integration tests
+  gem 'capybara'
 end
 
 group :test do
