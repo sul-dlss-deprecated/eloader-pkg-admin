@@ -1,4 +1,4 @@
-iscss_files: 'app/assets/**/*.scss'
+scss_files: 'app/assets/**/*.scss'
 
 exclude: 'vendor/**'
 
@@ -38,3 +38,6 @@ linters:
 
   VendorPrefix:
     enabled: false
+
+  Comment:
+    exclude: '**/*.css'
