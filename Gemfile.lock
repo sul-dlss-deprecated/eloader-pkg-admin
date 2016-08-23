@@ -213,7 +213,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
+  bootstrap-sass (~> 3.3.4)
   bootstrap_form
   byebug
   capybara

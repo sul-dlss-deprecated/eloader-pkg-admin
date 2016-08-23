@@ -14,10 +14,6 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 # Use sass-powered bootstrap
-gem 'bootstrap-sass'
-# Use bootstrap_form for easy form building
-gem 'bootstrap_form'
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -27,6 +23,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # A gem for adding Stanford University Libraries styles to Rails applications
 gem 'sul_styles'
+# Use sass-powered bootstrap
+gem 'bootstrap-sass', "~> 3.3.4"
+# Use bootstrap_form for easy form building
+gem 'bootstrap_form'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
