@@ -1,6 +1,6 @@
 ###
 # User for authentication and authorization
 ###
-class AuthorizedUser < ActiveRecord::Base
+class AuthorizedUsers < ActiveRecord::Base
   self.table_name = 'authorized_users'
 end

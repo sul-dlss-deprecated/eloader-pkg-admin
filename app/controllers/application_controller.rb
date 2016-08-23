@@ -8,15 +8,15 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= begin
-      AuthorizedUser.find_by(user_id: user_id)
+      AuthorizedUsers.find_by(sunet_id: sunet_id)
     end
   end
   helper_method :current_user
 
-  def user_id
+  def sunet_id
     request.env['REMOTE_USER'] || ENV['REMOTE_USER']
   end
-  helper_method :user_id
+  helper_method :sunet_id
 
   def current_user_name
     current_user.user_name
