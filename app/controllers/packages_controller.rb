@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+##
+# Package Controller for eloader-pkg-admin app
+##
 class PackagesController < ApplicationController
   before_action :set_package, only: [:show, :edit, :update, :destroy]
 
@@ -62,13 +66,14 @@ class PackagesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_package
-      @package = Package.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def package_params
-      params.fetch(:package, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_package
+    @package = Package.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def package_params
+    params.fetch(:package, {})
+  end
 end

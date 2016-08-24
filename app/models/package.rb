@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ###
 #  Class to connect to the VND_PACKAGES table
 ###

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ##
 # Application Controller for eloader-pkg-admin app
 ##
