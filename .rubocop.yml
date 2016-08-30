@@ -25,3 +25,6 @@ Metrics/ClassLength:
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: single_quotes
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
