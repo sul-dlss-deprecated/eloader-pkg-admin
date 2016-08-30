@@ -42,7 +42,7 @@ class UrlExclusionsController < ApplicationController
   def update
     respond_to do |format|
       if @url_exclusion.update(url_exclusion_params)
-        format.html { redirect_to @url_exclusion, notice: 'Url exclusion was successfully updated.' }
+        format.html { redirect_to url_exclusions_url, notice: 'Url exclusion was successfully updated.' }
         format.json { render :show, status: :ok, location: @url_exclusion }
       else
         format.html { render :edit }
