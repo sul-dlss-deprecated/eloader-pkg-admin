@@ -28,7 +28,7 @@ class UrlExclusionsController < ApplicationController
 
     respond_to do |format|
       if @url_exclusion.save
-        format.html { redirect_to @url_exclusion, notice: 'Url exclusion was successfully created.' }
+        format.html { redirect_to url_exclusions_url, notice: 'Url exclusion was successfully created.' }
         format.json { render :show, status: :created, location: @url_exclusion }
       else
         format.html { render :new }
