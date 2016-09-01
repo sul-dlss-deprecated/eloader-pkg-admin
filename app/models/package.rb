@@ -6,6 +6,5 @@ class Package < ActiveRecord::Base
   self.primary_key = 'record_id'
 
   validates :record_id, uniqueness: true
-  validates :package_name, :vendor_name, :data_pickup_type,
-  :proc_type, :match_opts, presence: true
+  validates :package_name, :vendor_name, :data_pickup_type, presence: true
 end
