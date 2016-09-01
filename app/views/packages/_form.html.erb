@@ -68,7 +68,7 @@
   </div>
 <h2>Rules for Create New or Merge URL</h2>
   <div class="field">
-    <%= f.label 'Create New Record or Merge URL Field' %>
+    <h4>Create New Record or Merge URL Field</h4>
     <%= f.radio_button :proc_type, "newonly" %>
     <%= f.label :proc_type_newonly, "New only Always create new or overlay, no search for matching print record in Symphony" %>
     <%= f.radio_button :proc_type, "mergenew" %>
@@ -77,6 +77,20 @@
     <%= f.label :proc_type_mergeonly, "Merge only Never create new, merge URL if match found with field(s) below" %>
     <%= f.radio_button :proc_type, "ckeymerge" %>
     <%= f.label :proc_type_ckeymerge, "CKEY-URL Merge Merge URL from ckey-URL input list" %>
+  </div>
+  <div class="field">
+    <h4>Fields to Match Incoming to Symphony Records</h4>
+    <p><em>At least one required if "Merge or New" or "Merge only" selected above. Not used in "New only" or "CKEY-URL Merge"</em></p>
+    <%= f.check_box :match_opts, { :multiple => true }, '020', nil %>
+    <%= f.label :match_opts_020, '020 (subfield a,z) to Symphony 020 or 776' %>
+    <%= f.check_box :match_opts, { :multiple => true }, '776_isbn', nil %>
+    <%= f.label :match_opts_776_isbn, '776 (subfield z) to Symphony 020 or 776' %>
+    <%= f.check_box :match_opts, { :multiple => true }, '022', nil %>
+    <%= f.label :match_opts_022, '022 (subfield a,y,z) to Symphony 022 or 776' %>
+    <%= f.check_box :match_opts, { :multiple => true }, '776_issn', nil %>
+    <%= f.label :match_opts_776_issn, '776 (subfield x) to Symphony 022 or 776' %>
+    <%= f.check_box :match_opts, { :multiple => true }, '024_isbn', nil %>
+    <%= f.label :match_opts_024_isbn, '024 (subfield a,z) to Symphony 020 or 776' %>
   </div>
 
 <h2>Processing Information</h2>
@@ -144,7 +158,7 @@
 </div>
 <div class="field">
   <%= f.label 'Comments' %>
-  <%= f.text_field :comments %>
+  <%= f.text_area :comments, rows: 4 %>
 </div>
 
   <div class="actions">
