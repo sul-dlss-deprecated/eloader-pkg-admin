@@ -8,22 +8,21 @@
 <table>
   <thead>
     <tr>
-      <th colspan="9"></th>
+      <th></th>
       <th>Status</th>
       <th>Package ID</th>
       <th>Package Name</th>
       <th>Vendor</th>
       <th>Date Entered</th>
-      <th colspan="9"></th>
-      <th colspan="9"></th>
-      <th colspan="9"></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @packages.each do |package| %>
       <tr>
-        <td>insert link to deactivate/activate pkg</td>
+        <td>activate/deactivate</td>
         <td><%= package.package_status %></td>
         <td><%= package.package_id %></td>
         <td><%= package.package_name %></td>
@@ -31,7 +30,6 @@
         <td><%= package.date_entered %></td>
         <td><%= link_to 'Details', package %></td>
         <td><%= link_to 'Edit', edit_package_path(package) %></td>
-        <td>insert link to show pkg files loaded</td>
       </tr>
     <% end %>
   </tbody>
