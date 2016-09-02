@@ -1,3 +1,4 @@
+# UrlExclusions controller
 class UrlExclusionsController < ApplicationController
   before_action :set_url_exclusion, only: [:show, :edit, :update, :destroy]
 
@@ -62,13 +63,14 @@ class UrlExclusionsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_url_exclusion
-      @url_exclusion = UrlExclusion.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def url_exclusion_params
-      params.require(:url_exclusion).permit(:url_substring)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_url_exclusion
+    @url_exclusion = UrlExclusion.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def url_exclusion_params
+    params.require(:url_exclusion).permit(:url_substring)
+  end
 end

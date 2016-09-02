@@ -1,1 +1,1 @@
-json.partial! "url_exclusions/url_exclusion", url_exclusion: @url_exclusion
+json.partial! 'url_exclusions/url_exclusion', url_exclusion: @url_exclusion
