@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'packages/edit', type: :view do
   before(:each) do
-    @package = assign(:package, Package.create!)
+    @package = FactoryGirl.create(:package)
   end
   it 'renders the edit package form' do
     render
