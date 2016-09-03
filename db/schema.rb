@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 20160823190958) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
+ActiveRecord::Schema.define(version: 20160830182615) do
+
+  create_table "url_exclusions", force: :cascade do |t|
+    t.string   "url_substring"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    
   end
 
 end

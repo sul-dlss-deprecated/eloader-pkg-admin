@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
   get 'package/index'
 
   get 'webauth/login' => 'authentication#login', as: :login
   get 'webauth/logout' => 'authentication#logout', as: :logout
-  
+
   root 'package#index'
+
+  resources :url_exclusions
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
