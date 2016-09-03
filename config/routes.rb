@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
 
   get 'package/index'
 
@@ -9,7 +8,7 @@ Rails.application.routes.draw do
   root 'package#index'
 
   resources :url_exclusions
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
