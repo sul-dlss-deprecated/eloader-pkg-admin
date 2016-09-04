@@ -1,6 +1,6 @@
-class CreateAuthorizedUsers < ActiveRecord::Migration
+class CreateAuthorizedUser < ActiveRecord::Migration
   def change
-    create_table :authorized_users do |t|
+    create_table :authorized_user do |t|
       t.string :sunet_id
       t.string :name
 

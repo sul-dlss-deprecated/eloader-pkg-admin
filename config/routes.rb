@@ -1,13 +1,24 @@
 Rails.application.routes.draw do
-  resources :packages
+
+  resources :packages 
+  # do
+  #   member do
+  #     put 'activate'
+  #   end
+  #   member do
+  #     put 'deactivate'
+  #   end
+  # end
+
   resources :url_exclusions
+
+  root 'packages#index'
 
   get 'packages/index'
 
   get 'webauth/login' => 'authentication#login', as: :login
   get 'webauth/logout' => 'authentication#logout', as: :logout
 
-  root 'package#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
