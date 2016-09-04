@@ -12,6 +12,9 @@ AllCops:
 #    - 'spec/teaspoon_env.rb'
     - 'vendor/**/*'
     - 'lib/tasks/display-coverage.rake'
+    - 'config.ru'
+    - 'Rakefile'
+    - 'lib/tasks/*.rake'
 
 Metrics/LineLength:
   Max: 120
