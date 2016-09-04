@@ -1,12 +1,6 @@
 require 'rails_helper'
 
 describe UrlExclusionsController, type: :controller do
-  let(:valid_attributes) do
-    { id: '2', url_substring: 'some.test.url/exclusion' }
-  end
-  let(:invalid_attributes) do
-    { id: '2', url_substring: '' }
-  end
   describe 'GET #new' do
     it 'assigns a new url_exclusion as @url_exclusion' do
       @url_exclusion = FactoryGirl.create(:url_exclusion)
@@ -15,6 +9,7 @@ describe UrlExclusionsController, type: :controller do
       expect(@url_exclusion).to be_a(UrlExclusion)
     end
   end
+
   describe 'POST #create' do
     context 'with valid params' do
       it 'creates a new UrlExclusion' do
@@ -45,6 +40,58 @@ describe UrlExclusionsController, type: :controller do
         post :create, url_exclusion: { url_substring: '' }
         expect(response).to render_template('new')
       end
+    end
+  end
+
+  describe 'PUT #update' do
+    context 'with valid params' do
+      it 'updates the requested url_exclusion' do
+        url_exclusion = FactoryGirl.create(:url_exclusion)
+        put :update, id: url_exclusion[:id], url_exclusion: { url_substring: 'some.new.url/exclusion!' }
+        url_exclusion.reload
+        # skip('Add assertions for updated state')
+      end
+
+      it 'assigns the requested url_exclusion as @url_exclusion' do
+        url_exclusion = FactoryGirl.create(:url_exclusion)
+        put :update, id: url_exclusion[:id], url_exclusion: { url_substring: 'some.test.url/exclusion' }
+        expect(assigns(:url_exclusion)).to eq(url_exclusion)
+      end
+
+      it 'redirects to the url_exclusion' do
+        url_exclusion = FactoryGirl.create(:url_exclusion)
+        put :update, id: url_exclusion[:id], url_exclusion: { url_substring: 'some.test.url/exclusion' }
+        expect(response).to redirect_to(url_exclusions_url)
+      end
+    end
+
+    context 'with invalid params' do
+      it 'assigns the url_exclusion as @url_exclusion' do
+        url_exclusion = FactoryGirl.create(:url_exclusion)
+        put :update, id: url_exclusion[:id], url_exclusion: { url_substring: '' }
+        expect(assigns(:url_exclusion)).to eq(url_exclusion)
+      end
+
+      it "re-renders the 'edit' template" do
+        url_exclusion = FactoryGirl.create(:url_exclusion)
+        put :update, id: url_exclusion[:id], url_exclusion: { url_substring: '' }
+        expect(response).to render_template('edit')
+      end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    it 'destroys the requested url_exclusion' do
+      url_exclusion = FactoryGirl.create(:url_exclusion)
+      expect do
+        delete :destroy, id: url_exclusion[:id]
+      end.to change(UrlExclusion, :count).by(-1)
+    end
+
+    it 'redirects to the url_exclusions list' do
+      url_exclusion = FactoryGirl.create(:url_exclusion)
+      delete :destroy, id: url_exclusion[:id]
+      expect(response).to redirect_to(url_exclusions_url)
     end
   end
 end
