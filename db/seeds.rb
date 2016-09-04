@@ -9,3 +9,7 @@ AuthorizedUsers.delete_all
 AuthorizedUsers.create!(sunet_id: 'jgreben', name: 'Josh Greben')
 AuthorizedUsers.create!(sunet_id: 'sdoljack', name: 'Shelley Doljack')
 AuthorizedUsers.create!(sunet_id: 'dlrueda', name: 'Daaaaaarsi!')
+
+UrlExclusion.delete_all
+UrlExclusion.create!(url_substring: 'some.test.url/exclusion')
+UrlExclusion.create!(url_substring: 'some.other.test.url/exclusion')
