@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824173348) do
-
+ActiveRecord::Schema.define(version: 20160830182615) do
   create_table "authorized_users", force: :cascade do |t|
     t.string   "sunet_id"
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "url_exclusions", force: :cascade do |t|
+    t.string   "url_substring"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "vnd_packages", primary_key: "record_id", force: :cascade do |t|
@@ -61,5 +66,4 @@ ActiveRecord::Schema.define(version: 20160824173348) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
-
 end
