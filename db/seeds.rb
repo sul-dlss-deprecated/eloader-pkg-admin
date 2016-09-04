@@ -11,8 +11,8 @@ AuthorizedUsers.create!(sunet_id: 'sdoljack', name: 'Shelley Doljack')
 AuthorizedUsers.create!(sunet_id: 'dlrueda', name: 'Darsi Rueda')
 
 UrlExclusion.delete_all
-UrlExclusion.create!(url_substring: 'some.test.url/exclusion')
-UrlExclusion.create!(url_substring: 'some.other.test.url/exclusion')
+UrlExclusion.create!(id: 1, url_substring: 'some.test.url/exclusion')
+UrlExclusion.create!(id: 2, url_substring: 'some.other.test.url/exclusion')
 
 Package.delete_all
 Package.create!(
