@@ -22,7 +22,8 @@
         <td><%= package.package_name %></td>
         <td><%= package.vendor_name %></td>
         <td><%= package.updated_at.to_formatted_s(:db) %></td>
-        <td><%= link_to 'Edit', edit_package_path(package), class: 'btn btn-sm btn-default' %></td>
+        <td><%= link_to 'details', package_path(package), class: 'btn btn-sm btn-default' %></td>
+        <td><%= link_to 'edit', edit_package_path(package), class: 'btn btn-sm btn-default' %></td>
       </tr>
     <% end %>
   </tbody>

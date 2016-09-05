@@ -28,10 +28,10 @@ class PackagesController < ApplicationController
   # POST /packages.json
   def create
     @package = Package.new(package_params)
-
     respond_to do |format|
       if @package.save
-        format.html { redirect_to @package, notice: 'Package was successfully created.' }
+        format.html { redirect_to @package }
+        flash[:success] = 'Package was successfully created.'
         format.json { render :show, status: :created, location: @package }
       else
         format.html { render :new }
@@ -45,7 +45,8 @@ class PackagesController < ApplicationController
   def update
     respond_to do |format|
       if @package.update(package_params)
-        format.html { redirect_to @package, notice: 'Package was successfully updated.' }
+        format.html { redirect_to @package }
+        flash[:success] = 'Package was successfully updated.'
         format.json { render :show, status: :ok, location: @package }
       else
         format.html { render :edit }
