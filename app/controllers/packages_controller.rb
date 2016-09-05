@@ -45,7 +45,7 @@ class PackagesController < ApplicationController
   def update
     respond_to do |format|
       if @package.update(package_params)
-        format.html { redirect_to packages_index_path, notice: 'Package was successfully updated.' }
+        format.html { redirect_to @package, notice: 'Package was successfully updated.' }
         format.json { render :show, status: :ok, location: @package }
       else
         format.html { render :edit }
@@ -55,11 +55,15 @@ class PackagesController < ApplicationController
   end
 
   def activate
-    redirect_to packages_path if @package.update(package_status: 'Active')
+    @package.update(package_status: 'Active')
+    redirect_to packages_path
+    flash[:success] = 'Package activated.'
   end
 
   def deactivate
-    redirect_to packages_path if @package.update(package_status: 'Inactive')
+    @package.update(package_status: 'Inactive')
+    redirect_to packages_path
+    flash[:warning] = 'Package deactivated.'
   end
   #
   # # DELETE /packages/1

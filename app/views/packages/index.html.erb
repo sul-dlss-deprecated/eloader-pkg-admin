@@ -15,8 +15,8 @@
   <tbody>
     <% @packages.each do |package| %>
       <tr>
-        <td><%= link_to 'Activate', package, method: :patch, action: :activate, class: 'btn btn-sm btn-success btn-full' %></td>
-        <td><%= link_to 'Deactivate', package, method: :patch, action: :deactivate, class: 'btn btn-sm btn-warning btn-full' %></td>
+        <td><%= link_to 'Activate', activate_package_path(package), method: :patch, action: :activate, class: 'btn btn-sm btn-success btn-full' %></td>
+        <td><%= link_to 'Deactivate', deactivate_package_path(package), method: :patch, action: :deactivate, class: 'btn btn-sm btn-warning btn-full' %></td>
         <td><%= package.package_status %></td>
         <td><%= package.package_id %></td>
         <td><%= package.package_name %></td>
