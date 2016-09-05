@@ -75,7 +75,7 @@ describe PackagesController do
                                                   package_status: 'Inactive',
                                                   vendor_name: 'different vend',
                                                   data_pickup_type: 'some other' }
-        expect(response).to redirect_to(package)
+        expect(response).to redirect_to(packages_index_path)
       end
     end
 
