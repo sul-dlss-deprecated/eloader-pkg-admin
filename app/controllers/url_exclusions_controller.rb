@@ -2,6 +2,10 @@
 class UrlExclusionsController < ApplicationController
   before_action :set_url_exclusion, only: [:show, :edit, :update, :destroy]
 
+  def page_title
+    'Strings to exclude from package URLs'
+  end
+
   # GET /url_exclusions
   # GET /url_exclusions.json
   def index

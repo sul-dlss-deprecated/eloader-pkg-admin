@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :authorized_users do |f|
+  factory :authorized_user do |f|
     f.sunet_id 'testuser'
     f.name 'Test User'
   end

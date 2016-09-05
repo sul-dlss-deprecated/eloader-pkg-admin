@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= begin
-      AuthorizedUsers.find_by(sunet_id: sunet_id)
+      AuthorizedUser.find_by(sunet_id: sunet_id)
     end
   end
   helper_method :current_user
@@ -17,4 +17,8 @@ class ApplicationController < ActionController::Base
     request.env['REMOTE_USER'] || ENV['REMOTE_USER']
   end
   helper_method :sunet_id
+
+  def page_title
+    'E-Loader Package Admin'
+  end
 end

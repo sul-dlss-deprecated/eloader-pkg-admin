@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Url substring:</strong>
-  <%= @url_exclusion.url_substring %>
+  <h4>String to exclude:</h4>
+  [id:<%= @url_exclusion.id %>] <%= @url_exclusion.url_substring %>
+  <%= link_to 'Edit', edit_url_exclusion_path(@url_exclusion), class: 'btn btn-sm btn-default' %>
+  <div class='actions'>
+    <%= link_to 'Back', url_exclusions_path %>
+  </div>
 </p>
-
-<%= link_to 'Edit', edit_url_exclusion_path(@url_exclusion) %> |
-<%= link_to 'Back', url_exclusions_path %>

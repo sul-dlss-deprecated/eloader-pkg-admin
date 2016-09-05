@@ -1,12 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Url Exclusions</h1>
-
 <table>
   <thead>
     <tr>
-      <th>Url substring</th>
-      <th colspan="3"></th>
+      <th><strong>String to Exclude from URL</strong></th>
+      <th colspan='3'></th>
     </tr>
   </thead>
 
@@ -24,4 +20,4 @@
 
 <br>
 
-<%= link_to 'New Url exclusion', new_url_exclusion_path %>
+<%= link_to 'New Url exclusion', new_url_exclusion_path, class: 'btn btn-sm btn-primary btn-full' %>

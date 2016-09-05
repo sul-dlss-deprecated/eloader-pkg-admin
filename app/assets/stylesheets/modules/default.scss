@@ -1,4 +1,5 @@
-h1 {
+h1,
+h2 {
   margin-top: 10px;
   padding-bottom: 15px;
 }
@@ -22,4 +23,27 @@ h1 {
 .access-error {
   color: $color-cardinal-red;
   font-size: 1.25em;
+}
+
+.actions {
+  padding: 10px 0;
+}
+
+.nav-buttons {
+
+  padding-bottom: 15px;
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+td,
+th {
+  padding: 5px 0 5px 10px;
+  white-space: nowrap;
+}
+
+th {
+  font-size: 0.9em;
 }

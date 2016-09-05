@@ -13,23 +13,25 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= content_for(:head) %>
-   <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
-   <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie8.css" /> <![endif]-->
-   <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie7.css" /> <![endif]-->
+  <!--[if lt IE 9]> <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+  <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie8.css" /> <![endif]-->
+  <!--[if IE 7]> <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie7.css" /> <![endif]-->
 </head>
 <body>
   <div id="su-wrap"> <!-- #su-wrap start -->
-        <div id="su-content"> <!-- #su-content start -->
-          <div id="outer-container" class="container-fluid">
-            <%= render 'shared/top_navbar' %>
-            <section id="main-container" role="main">
-              <%= render 'shared/flashes' %>
-              <%= yield %>
-            </div>
-          </div>
+    <div id="su-content"> <!-- #su-content start -->
+      <div id="outer-container" class="container-fluid">
+        <%= render 'shared/top_navbar' %>
+        <section id="main-container" role="main">
+          <h2><%= controller.page_title %></h2>
+          <%= render 'shared/flashes' %>
+          <%= render 'shared/nav_buttons' %>
+          <%= yield %>
         </div>
       </div>
+    </div>
+  </div>
 
-      <%= render 'shared/sul_footer' %>
+  <%= render 'shared/sul_footer' %>
 </body>
 </html>
