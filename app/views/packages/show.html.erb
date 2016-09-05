@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_package_path(@package) %> |
+<strong>Package [id:<%= @package.id %>] "<%= @package.package_name %>"</strong>
+<%= link_to 'Edit', edit_package_path(@package), class: 'btn btn-sm btn-default' %>
+<ul>
+  <% @package.attributes.each_pair do |key, value| %>
+  <li>
+    <strong>
+      <%= key.titlecase %>:
+    </strong>
+    <em>
+      &nbsp;<%= value %>
+    </em>
+  </li>
+  <% end %>
+</ul>
 <%= link_to 'Back', packages_path %>

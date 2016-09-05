@@ -12,10 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :url_substring %><br>
-    <%= f.text_field :url_substring %>
+    <%= f.label :url_substring, 'String to exclude from URL:' %><br>
+    <%= link_to 'Show', @url_exclusion, class: 'btn btn-sm btn-default' %>
+    <%= f.text_field :url_substring, size: 80 %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-sm btn-primary' %>
   </div>
 <% end %>

@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160830182615) do
 
-  create_table "authorized_users", force: :cascade do |t|
+  create_table "authorized_user", force: :cascade do |t|
     t.string   "sunet_id"
     t.string   "name"
     t.datetime "created_at", null: false
