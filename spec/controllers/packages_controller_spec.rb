@@ -99,7 +99,7 @@ describe PackagesController do
                                                     package_status: 'Active',
                                                     vendor_name: 'different vend',
                                                     data_pickup_type: 'some other' }
-      expect(response).to render_template('activate')
+      expect(Package.find(package[:id]).package_status).to eq('Active')
     end
   end
   describe 'activate a package' do
@@ -109,6 +109,7 @@ describe PackagesController do
                                                       package_status: 'Inactive',
                                                       vendor_name: 'different vend',
                                                       data_pickup_type: 'some other' }
+      expect(Package.find(package[:id]).package_status).to eq('Inactive')
     end
   end
 end
