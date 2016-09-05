@@ -1,8 +1,8 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
 
   resources :packages do
-    get 'activate' => :update
-    get 'deactivate' => :update
+    patch :activate, on: :member
+    patch :deactivate, on: :member
   end
 
   resources :url_exclusions

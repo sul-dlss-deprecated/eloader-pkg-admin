@@ -2,7 +2,7 @@
 # Package controller for eloader-pkg-admin app
 ##
 class PackagesController < ApplicationController
-  before_action :set_package, only: [:show, :edit, :update]
+  before_action :set_package, only: [:show, :edit, :update, :activate, :deactivate]
 
   # GET /packages
   # GET /packages.json
@@ -52,6 +52,14 @@ class PackagesController < ApplicationController
         format.json { render json: @package.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def activate
+    redirect_to packages_path if @package.update(package_status: 'Active')
+  end
+
+  def deactivate
+    redirect_to packages_path if @package.update(package_status: 'Inactive')
   end
   #
   # # DELETE /packages/1

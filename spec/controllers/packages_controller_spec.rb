@@ -23,14 +23,12 @@ describe PackagesController do
                                    vendor_name: 'vend', data_pickup_type: 'some' }
         end.to change(Package, :count).by(1)
       end
-
       it 'assigns a newly created package as @package' do
         post :create, package: { package_name: 'name', package_status: 'Inactive',
                                  vendor_name: 'vend', data_pickup_type: 'some' }
         expect(assigns(:package)).to be_a(Package)
         expect(assigns(:package)).to be_persisted
       end
-
       it 'redirects to the created package' do
         post :create, package: { package_name: 'name', package_status: 'Inactive',
                                  vendor_name: 'vend', data_pickup_type: 'some' }
@@ -42,7 +40,6 @@ describe PackagesController do
         post :create, package: { package_name: '', vendor_name: '', data_pickup_type: '' }
         expect(assigns(:package)).to be_a(Package)
       end
-
       it "re-renders the 'new' template" do
         post :create, package: { package_name: '', vendor_name: '', data_pickup_type: '' }
         expect(response).to render_template('new')
@@ -59,7 +56,6 @@ describe PackagesController do
                                                   data_pickup_type: 'some other' }
         package.reload
       end
-
       it 'assigns the requested package as @package' do
         package = FactoryGirl.create(:package)
         put :update, id: package[:id], package: { package_name: 'different name',
@@ -68,7 +64,6 @@ describe PackagesController do
                                                   data_pickup_type: 'some other' }
         expect(assigns(:package)).to eq(package)
       end
-
       it 'redirects to the package' do
         package = FactoryGirl.create(:package)
         put :update, id: package[:id], package: { package_name: 'different name',
@@ -78,7 +73,6 @@ describe PackagesController do
         expect(response).to redirect_to(packages_index_path)
       end
     end
-
     context 'with invalid params' do
       it 'assigns the package as @package' do
         package = FactoryGirl.create(:package)
@@ -88,7 +82,6 @@ describe PackagesController do
                                                   data_pickup_type: '' }
         expect(assigns(:package)).to eq(package)
       end
-
       it "re-renders the 'edit' template" do
         package = FactoryGirl.create(:package)
         put :update, id: package[:id], package: { package_name: '',
@@ -99,8 +92,23 @@ describe PackagesController do
       end
     end
   end
-  describe 'set_package' do
-    it 'finds the package by id' do
+  describe 'activate a package' do
+    it 'updates a package status and redirects to home' do
+      package = FactoryGirl.create(:package)
+      patch :activate, id: package[:id], package: { package_name: 'different name',
+                                                    package_status: 'Active',
+                                                    vendor_name: 'different vend',
+                                                    data_pickup_type: 'some other' }
+      expect(response).to render_template('activate')
+    end
+  end
+  describe 'activate a package' do
+    it 'updates a package status and redirects to home' do
+      package = FactoryGirl.create(:package)
+      patch :deactivate, id: package[:id], package: { package_name: 'different name',
+                                                      package_status: 'Inactive',
+                                                      vendor_name: 'different vend',
+                                                      data_pickup_type: 'some other' }
     end
   end
 end
