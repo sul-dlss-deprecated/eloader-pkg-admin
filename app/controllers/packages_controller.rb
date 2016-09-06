@@ -2,7 +2,11 @@
 # Package controller for eloader-pkg-admin app
 ##
 class PackagesController < ApplicationController
-  before_action :set_package, only: [:show, :edit, :update, :activate, :deactivate]
+  before_action :set_package, only: [:show, :edit, :update, :destroy, :activate, :deactivate]
+
+  def page_title
+    'Electronic resource package management'
+  end
 
   # GET /packages
   # GET /packages.json
@@ -66,16 +70,16 @@ class PackagesController < ApplicationController
     redirect_to packages_path
     flash[:warning] = 'Package deactivated.'
   end
-  #
+
   # # DELETE /packages/1
   # # DELETE /packages/1.json
-  # def destroy
-  #   @package.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to packages_url, notice: 'Package was successfully destroyed.' }
-  #     format.json { head :no_content }
-  #   end
-  # end
+  def destroy
+    @package.destroy
+    respond_to do |format|
+      format.html { redirect_to @package, notice: 'Package was successfully removed.' }
+      format.json { head :no_content }
+    end
+  end
 
   private
 

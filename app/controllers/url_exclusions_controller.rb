@@ -3,7 +3,7 @@ class UrlExclusionsController < ApplicationController
   before_action :set_url_exclusion, only: [:show, :edit, :update, :destroy]
 
   def page_title
-    'Strings to exclude from package URLs'
+    'URLs to remove from vendor records'
   end
 
   # GET /url_exclusions

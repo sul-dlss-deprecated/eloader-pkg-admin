@@ -1,5 +1,12 @@
-<strong>Package [id:<%= @package.id %>] "<%= @package.package_name %>"</strong>
-<%= link_to 'Edit', edit_package_path(@package), class: 'btn btn-sm btn-default' %>
+<h3>
+  Details for <%= @package.package_name %>
+  <span class='label label-success'>
+    <%= link_to :package do %><%= @package.package_id %><% end %>
+  </span>
+</h3>
+<%= link_to 'Edit package', edit_package_path(@package), class: 'btn btn-sm btn-default' %>
+
+<%= link_to 'delete package', @package, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-warning' %>
 <ul>
   <% @package.attributes.each_pair do |key, value| %>
   <li>

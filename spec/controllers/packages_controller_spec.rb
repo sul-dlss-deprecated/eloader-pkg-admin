@@ -112,4 +112,18 @@ describe PackagesController do
       expect(Package.find(package[:id]).package_status).to eq('Inactive')
     end
   end
+  describe 'DELETE #destroy' do
+    it 'destroys the requested package' do
+      package = FactoryGirl.create(:package)
+      expect do
+        delete :destroy, id: package[:id]
+      end.to change(Package, :count).by(-1)
+    end
+
+    it 'redirects to the package list' do
+      package = FactoryGirl.create(:package)
+      delete :destroy, id: package[:id]
+      expect(response).to redirect_to(:packages)
+    end
+  end
 end

@@ -25,4 +25,9 @@ describe ApplicationController do
       expect(controller.send(:current_user)).to be_a AuthorizedUser
     end
   end
+  describe 'page title' do
+    it 'Should display the default page title for the app' do
+      expect(controller.send(:page_title)).to eq('E-Loader Package Admin')
+    end
+  end
 end

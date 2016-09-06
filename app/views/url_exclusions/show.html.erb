@@ -1,8 +1,12 @@
 <p>
-  <h4>String to exclude:</h4>
-  [id:<%= @url_exclusion.id %>] <%= @url_exclusion.url_substring %>
-  <%= link_to 'Edit', edit_url_exclusion_path(@url_exclusion), class: 'btn btn-sm btn-default' %>
-  <div class='actions'>
-    <%= link_to 'Back', url_exclusions_path %>
-  </div>
+  <thead>String to exclude</thead>
+  <table>
+    <tr>
+      <td class='label label-info'>
+        ID <%= @url_exclusion.id %>
+      </td>
+      <td><%= @url_exclusion.url_substring %></td>
+      <td><%= link_to 'Edit', edit_url_exclusion_path(@url_exclusion), class: 'btn btn-sm btn-default' %></td>
+    </tr>
+  </table>
 </p>
