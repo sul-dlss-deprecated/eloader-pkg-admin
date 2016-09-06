@@ -21,19 +21,19 @@
   </div>
   <div class="tr">
     <div class="td"><%= f.label 'Package ID' %></div>
-    <div class="td"><%= f.text_field :package_id, :size => 75 %></div>
+    <div class="td"><%= f.text_field :package_id, size: 75 %></div>
   </div>
   <div class="tr">
     <div class="td"><%= f.label :package_name %></div>
-    <div class="td"><%= f.text_field :package_name, :size => 75 %></div>
+    <div class="td"><%= f.text_field :package_name, size: 75 %></div>
   </div>
   <div class="tr">
     <div class="td"><%= f.label :vendor_name %></div>
-    <div class="td"><%= f.text_field :vendor_name, :size => 75 %></div>
+    <div class="td"><%= f.text_field :vendor_name, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Documentation URL' %></div>
-    <div class="td"><%= f.text_field :package_url, :size => 75 %></div>
+    <div class="td"><%= f.label :package_url, 'Documentation URL' %></div>
+    <div class="td"><%= f.text_field :package_url, size: 75 %></div>
   </div>
 </div>
 
@@ -49,38 +49,38 @@
     <div class="td"><h4>Option for "AFS" and "FTP to AFS" Data Pickup Types</h4></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'AFS Directory Path' %></div>
-    <div class="td"><%= f.text_field :afs_path, :size => 75 %></div>
+    <div class="td"><%= f.label :afs_path, 'AFS Directory Path' %></div>
+    <div class="td"><%= f.text_field :afs_path, size: 75 %></div>
   </div>
   <div class="tr">
     <div class="td"><h4>Option for "FTP to AFS" Data Pickup Type</h4></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'FTP Download Directory Path' %></div>
-    <div class="td"><%= f.text_field :put_file_loc, :size => 75 %></div>
+    <div class="td"><%= f.label :put_file_loc, 'FTP Download Directory Path' %></div>
+    <div class="td"><%= f.text_field :put_file_loc, size: 75 %></div>
   </div>
   <div class="tr">
     <div class="td"><h4>Options for "FTP" and "FTP to AFS" Data Pickup Types</h4></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label :ftp_server %></div>
-    <div class="td"><%= f.text_field :ftp_server, :size => 75 %></div>
+    <div class="td"><%= f.label :ftp_server, 'FTP Server' %></div>
+    <div class="td"><%= f.text_field :ftp_server, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label :ftp_user %></div>
-    <div class="td"><%= f.text_field :ftp_user, :size => 75 %></div>
+    <div class="td"><%= f.label :ftp_user, 'FTP User' %></div>
+    <div class="td"><%= f.text_field :ftp_user, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label :ftp_password %></div>
-    <div class="td"><%= f.text_field :ftp_password, :size => 75 %></div>
+    <div class="td"><%= f.label :ftp_password, 'FTP Password' %></div>
+    <div class="td"><%= f.text_field :ftp_password, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'FTP Remote Directory' %></div>
-    <div class="td"><%= f.text_field :ftp_directory, :size => 75 %></div>
+    <div class="td"><%= f.label :ftp_directory, 'FTP Remote Directory' %></div>
+    <div class="td"><%= f.text_field :ftp_directory, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'FTP File Name Pattern (Perl regex)' %></div>
-    <div class="td"><%= f.text_field :ftp_file_prefix, :size => 75 %></div>
+    <div class="td"><%= f.label :ftp_file_prefix, 'FTP File Name Pattern (Perl regex)' %></div>
+    <div class="td"><%= f.text_field :ftp_file_prefix, size: 75 %></div>
   </div>
 </div>
 
@@ -92,28 +92,28 @@
     <div class="td"><h4>Create New Record or Merge URL Field</h4></div>
     <div class="td">
       <ul>
-        <div class="li">
+        <div>
           <li>
             <%= f.radio_button :proc_type, "newonly" %>
-            <%= f.label :proc_type_newonly, "New only Always create new or overlay, no search for matching print record in Symphony" %>
+            <strong>New only Always create new or overlay, no search for matching print record in Symphony</strong>
           </li>
         </div>
-        <div class="li">
+        <div >
           <li>
             <%= f.radio_button :proc_type, "mergenew" %>
-            <%= f.label :proc_type_mergenew, "Merge or New Create new only if no overlay match or merge match with field(s) below" %>
+            <strong> Merge or New Create new only if no overlay match or merge match with field(s) below </strong>
           </li>
         </div>
-        <div class="li">
+        <div >
           <li>
             <%= f.radio_button :proc_type, "mergeonly" %>
-            <%= f.label :proc_type_mergeonly, "Merge only Never create new, merge URL if match found with field(s) below" %>
+            <strong>Merge only Never create new, merge URL if match found with field(s) below</strong>
           </li>
         </div>
-        <div class="li">
+        <div>
           <li>
             <%= f.radio_button :proc_type, "ckeymerge" %>
-            <%= f.label :proc_type_ckeymerge, "CKEY-URL Merge Merge URL from ckey-URL input list" %>
+            <strong>CKEY-URL Merge Merge URL from ckey-URL input list</strong>
           </li>
         </div>
       </ul>
@@ -172,7 +172,7 @@
   </div>
   <div class="tr">
     <div class="td"><%= f.label 'Vendor Cataloging Code for 040' %></div>
-    <div class="td"><%= f.text_field :vnd_catcode, :size => 75 %></div>
+    <div class="td"><%= f.text_field :vnd_catcode, size: 75 %></div>
   </div>
   <div class="tr">
     <div class="td"><%= f.label 'Export Record to OCLC' %></div>
@@ -196,19 +196,19 @@
   </div>
   <div class="tr">
     <div class="td"><%= f.label 'Custom Junktag File Name' %></div>
-    <div class="td"><%= f.text_field :junktag_file, :size => 75 %></div>
+    <div class="td"><%= f.text_field :junktag_file, size: 75 %></div>
   </div>
   <div class="tr">
     <div class="td"><%= f.label 'Full Path of Preprocess Modify Script' %></div>
-    <div class="td"><%= f.text_field :preprocess_modify_script, :size => 75 %></div>
+    <div class="td"><%= f.text_field :preprocess_modify_script, size: 75 %></div>
   </div>
   <div class="tr">
     <div class="td"><%= f.label 'Full Path of Preprocess Split Script' %></div>
-    <div class="td"><%= f.text_field :preprocess_split_script, :size => 75 %></div>
+    <div class="td"><%= f.text_field :preprocess_split_script, size: 75 %></div>
   </div>
   <div class="tr">
     <div class="td"><%= f.label 'Full Path of Preprocess Put in AFS Script' %></div>
-    <div class="td"><%= f.text_field :preprocess_put_script, :size => 75 %></div>
+    <div class="td"><%= f.text_field :preprocess_put_script, size: 75 %></div>
   </div>
 </div>
 
@@ -218,7 +218,7 @@
   </div>
   <div class="tr">
     <div class="td"><%= f.label 'Extra email Addresses for Report Mail' %></div>
-    <div class="td"><%= f.text_field :rpt_mail, :size => 75 %></div>
+    <div class="td"><%= f.text_field :rpt_mail, size: 75 %></div>
   </div>
   <div class="tr">
     <div class="td"><%= f.label 'Comments' %></div>
