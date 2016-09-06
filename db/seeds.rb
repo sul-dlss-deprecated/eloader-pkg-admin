@@ -9,7 +9,7 @@ AuthorizedUser.delete_all
 AuthorizedUser.create!(sunet_id: 'jgreben', name: 'Josh Greben')
 AuthorizedUser.create!(sunet_id: 'sdoljack', name: 'Shelley Doljack')
 AuthorizedUser.create!(sunet_id: 'dlrueda', name: 'Darsi Rueda')
-AuthorizedUser.create!(sunet_id: 'butch', name: 'Butch Anton')
+AuthorizedUser.create!(sunet_id: 'guest', name: 'Guest User')
 
 UrlExclusion.delete_all
 UrlExclusion.create!(id: 1, url_substring: 'proxy')
