@@ -16,11 +16,11 @@
     <div class="td"><h3>Package Information</h3></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Package Status' %></div>
+    <div class="td"><%= f.label :package_status, 'Package Status' %></div>
     <div class="td"><%= f.select :package_status, ['Inactive', 'Active'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Package ID' %></div>
+    <div class="td"><%= f.label :package_id, 'Package ID' %></div>
     <div class="td"><%= f.text_field :package_id, size: 75 %></div>
   </div>
   <div class="tr">
@@ -155,59 +155,59 @@
     <div class="td"><h3>Processing Information</h3></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Symphony URL Destination' %></div>
+    <div class="td"><%= f.label :url_field, 'Symphony URL Destination' %></div>
     <div class="td"><%= f.select :url_field, ['856', '956'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Vendor ID Field (Read)' %></div>
+    <div class="td"><%= f.label :vendor_id_read, 'Vendor ID Field (Read)' %></div>
     <div class="td"><%= f.select :vendor_id_read, ['001', '090'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Add Access Restriction Note' %></div>
+    <div class="td"><%= f.label :access_note, 'Add Access Restriction Note' %></div>
     <div class="td"><%= f.select :access_note, ['No', 'Yes'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Create/Update 040 with CSt' %></div>
+    <div class="td"><%= f.label :update_040, 'Create/Update 040 with CSt' %></div>
     <div class="td"><%= f.select :update_040, ['No', 'Yes'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Vendor Cataloging Code for 040' %></div>
+    <div class="td"><%= f.label :vnd_catcode, 'Vendor Cataloging Code for 040' %></div>
     <div class="td"><%= f.text_field :vnd_catcode, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Export Record to OCLC' %></div>
+    <div class="td"><%= f.label :export_note, 'Export Record to OCLC' %></div>
     <div class="td"><%= f.select :export_note, ['No', 'Yes'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Export Record to Backstage' %></div>
+    <div class="td"><%= f.label :export_auth, 'Export Record to Backstage' %></div>
     <div class="td"><%= f.select :export_auth, ['No', 'Yes - Weekly'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Date cataloged for new records' %></div>
+    <div class="td"><%= f.label :date_cat, 'Date cataloged for new records' %></div>
     <div class="td"><%= f.select :date_cat, ['Today', 'Never'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Holding Code' %></div>
+    <div class="td"><%= f.label :holding_code, 'Holding Code' %></div>
     <div class="td"><%= f.select :holding_code, ['LAW-INT-H', 'SUL-INT-H'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'MARC Encoding Level' %></div>
+    <div class="td"><%= f.label :encoding_level, 'MARC Encoding Level' %></div>
     <div class="td"><%= f.select :encoding_level, ['ASIS', ' ', '1', '2', '3', '4', '5', '7', '8', 'u', 'z'] %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Custom Junktag File Name' %></div>
+    <div class="td"><%= f.label :junktag_file, 'Custom Junktag File Name' %></div>
     <div class="td"><%= f.text_field :junktag_file, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Full Path of Preprocess Modify Script' %></div>
+    <div class="td"><%= f.label :preprocess_modify_script, 'Full Path of Preprocess Modify Script' %></div>
     <div class="td"><%= f.text_field :preprocess_modify_script, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Full Path of Preprocess Split Script' %></div>
+    <div class="td"><%= f.label :preprocess_split_script, 'Full Path of Preprocess Split Script' %></div>
     <div class="td"><%= f.text_field :preprocess_split_script, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Full Path of Preprocess Put in AFS Script' %></div>
+    <div class="td"><%= f.label :preprocess_put_script, 'Full Path of Preprocess Put in AFS Script' %></div>
     <div class="td"><%= f.text_field :preprocess_put_script, size: 75 %></div>
   </div>
 </div>
@@ -217,11 +217,11 @@
     <div class="td"><h3>Other</h3></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Extra email Addresses for Report Mail' %></div>
+    <div class="td"><%= f.label :rpt_mail, 'Extra email Addresses for Report Mail' %></div>
     <div class="td"><%= f.text_field :rpt_mail, size: 75 %></div>
   </div>
   <div class="tr">
-    <div class="td"><%= f.label 'Comments' %></div>
+    <div class="td"><%= f.label :comments, 'Comments' %></div>
     <div class="td"><%= f.text_area :comments, rows: 4, cols: 75 %></div>
   </div>
 </div>
