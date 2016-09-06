@@ -19,10 +19,15 @@ describe ApplicationController do
   end
   describe '#current_user' do
     it 'should set the current_user as a webauth_user' do
-      user = FactoryGirl.create(:authorized_users)
+      user = FactoryGirl.create(:authorized_user)
       expect(user.sunet_id).to eq('testuser')
       expect(user.name).to eq('Test User')
-      expect(controller.send(:current_user)).to be_a AuthorizedUsers
+      expect(controller.send(:current_user)).to be_a AuthorizedUser
+    end
+  end
+  describe 'page title' do
+    it 'Should display the default page title for the app' do
+      expect(controller.send(:page_title)).to eq('E-Loader Package Admin')
     end
   end
 end

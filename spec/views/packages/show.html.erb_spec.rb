@@ -5,7 +5,7 @@ RSpec.describe 'packages/show', type: :view do
     @package = FactoryGirl.create(:package)
   end
 
-  it 'renders attributes in <p>' do
-    render
+  it 'renders attributes in <li>' do
+    render @package
   end
 end

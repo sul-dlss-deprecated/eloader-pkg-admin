@@ -13,6 +13,10 @@
 
 <h2>Package Information</h2>
   <div class="field">
+    <%= f.label 'Package Status' %>
+    <%= f.select :package_status, ['Inactive', 'Active'] %>
+  </div>
+  <div class="field">
     <%= f.label 'Package ID' %>
     <%= f.text_field :package_id %>
   </div>
@@ -162,6 +166,6 @@
 </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-md btn-primary btn-full' %>
   </div>
 <% end %>

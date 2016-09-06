@@ -1,0 +1,67 @@
+h1,
+h2 {
+  margin-top: 10px;
+  padding-bottom: 15px;
+}
+
+.home-page-section {
+  padding: 15px 0 0;
+
+  h2 {
+    border-bottom: 1px solid $sul-h2-border-color;
+  }
+
+  ul {
+    list-style-type: none;
+
+    li {
+      line-height: 2.4em;
+    }
+  }
+}
+
+.access-error {
+  color: $color-cardinal-red;
+  font-size: 1.25em;
+}
+
+.actions {
+  padding: 10px 0;
+}
+
+.nav-buttons {
+  padding-bottom: 15px;
+}
+
+.active {
+  color: $green;
+}
+
+.inactive {
+  color: $grayish-yellow;
+}
+
+td,
+th {
+  padding: 5px 0 5px 20px;
+  white-space: nowrap;
+}
+
+td a,
+span a {
+  color: $white;
+  vertical-align: top;
+}
+
+.label {
+  display: inline-flex;
+}
+
+.table th {
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+ul {
+  list-style-type: none;
+}
