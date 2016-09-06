@@ -2,7 +2,7 @@
 
 # eloader-pkg-admin
 
-This is a Rails application to be a front-end for administrating the various Eloader packages that are loaded to Symphony. Also can set 856s to not load based on URL strings they include.
+This is a Rails application to be the front-end for administrating the various Eloader packages that are loaded to Symphony. Also can set 856s to not load based on URL strings they include.
 
 ## Requirements
 1. Ruby (2.3.1)
