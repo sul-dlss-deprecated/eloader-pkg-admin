@@ -11,158 +11,219 @@
     </div>
   <% end %>
 
-<h2>Package Information</h2>
-  <div class="field">
-    <%= f.label 'Package Status' %>
-    <%= f.select :package_status, ['Inactive', 'Active'] %>
+<div class="table">
+  <div class="tr">
+    <div class="td"><h3>Package Information</h3></div>
   </div>
-  <div class="field">
-    <%= f.label 'Package ID' %>
-    <%= f.text_field :package_id %>
+  <div class="tr">
+    <div class="td"><%= f.label 'Package Status' %></div>
+    <div class="td"><%= f.select :package_status, ['Inactive', 'Active'] %></div>
   </div>
-  <div class="field">
-    <%= f.label :package_name %>
-    <%= f.text_field :package_name %>
+  <div class="tr">
+    <div class="td"><%= f.label 'Package ID' %></div>
+    <div class="td"><%= f.text_field :package_id %></div>
   </div>
-  <div class="field">
-    <%= f.label :vendor_name %>
-    <%= f.text_field :vendor_name %>
+  <div class="tr">
+    <div class="td"><%= f.label :package_name %></div>
+    <div class="td"><%= f.text_field :package_name %></div>
   </div>
-  <div class="field">
-    <%= f.label 'Documentation URL' %>
-    <%= f.text_field :package_url %>
+  <div class="tr">
+    <div class="td"><%= f.label :vendor_name %></div>
+    <div class="td"><%= f.text_field :vendor_name %></div>
   </div>
-  <br>
-
-<h2>Pickup Information</h2>
-  <div class="field">
-    <%= f.label :data_pickup_type %>
-    <%= f.select :data_pickup_type, ['FTP', 'AFS', 'FTP to AFS'] %>
+  <div class="tr">
+    <div class="td"><%= f.label 'Documentation URL' %></div>
+    <div class="td"><%= f.text_field :package_url %></div>
   </div>
-<h4>Option for "AFS" and "FTP to AFS" Data Pickup Types</h4>
-  <div class="field">
-    <%= f.label 'AFS Directory Path' %>
-    <%= f.text_field :afs_path %>
-  </div>
-<h4>Option for "FTP to AFS" Data Pickup Type</h4>
-  <div class="field">
-    <%= f.label 'FTP Download Directory Path' %>
-    <%= f.text_field :put_file_loc %>
-  </div>
-<h4>Options for "FTP" and "FTP to AFS" Data Pickup Types</h4>
-  <div class="field">
-    <%= f.label :ftp_server %>
-    <%= f.text_field :ftp_server %>
-  </div>
-  <div class="field">
-    <%= f.label :ftp_user %>
-    <%= f.text_field :ftp_user %>
-  </div>
-  <div class="field">
-    <%= f.label :ftp_password %>
-    <%= f.text_field :ftp_password %>
-  </div>
-  <div class="field">
-    <%= f.label 'FTP Remote Directory' %>
-    <%= f.text_field :ftp_directory %>
-  </div>
-  <div class="field">
-    <%= f.label 'FTP File Name Pattern (Perl regex)' %>
-    <%= f.text_field :ftp_file_prefix %>
-  </div>
-<h2>Rules for Create New or Merge URL</h2>
-  <div class="field">
-    <h4>Create New Record or Merge URL Field</h4>
-    <%= f.radio_button :proc_type, "newonly" %>
-    <%= f.label :proc_type_newonly, "New only Always create new or overlay, no search for matching print record in Symphony" %>
-    <%= f.radio_button :proc_type, "mergenew" %>
-    <%= f.label :proc_type_mergenew, "Merge or New Create new only if no overlay match or merge match with field(s) below" %>
-    <%= f.radio_button :proc_type, "mergeonly" %>
-    <%= f.label :proc_type_mergeonly, "Merge only Never create new, merge URL if match found with field(s) below" %>
-    <%= f.radio_button :proc_type, "ckeymerge" %>
-    <%= f.label :proc_type_ckeymerge, "CKEY-URL Merge Merge URL from ckey-URL input list" %>
-  </div>
-  <div class="field">
-    <h4>Fields to Match Incoming to Symphony Records</h4>
-    <p><em>At least one required if "Merge or New" or "Merge only" selected above. Not used in "New only" or "CKEY-URL Merge"</em></p>
-    <%= f.check_box :match_opts, { :multiple => true }, '020', nil %>
-    <%= f.label :match_opts_020, '020 (subfield a,z) to Symphony 020 or 776' %>
-    <%= f.check_box :match_opts, { :multiple => true }, '776_isbn', nil %>
-    <%= f.label :match_opts_776_isbn, '776 (subfield z) to Symphony 020 or 776' %>
-    <%= f.check_box :match_opts, { :multiple => true }, '022', nil %>
-    <%= f.label :match_opts_022, '022 (subfield a,y,z) to Symphony 022 or 776' %>
-    <%= f.check_box :match_opts, { :multiple => true }, '776_issn', nil %>
-    <%= f.label :match_opts_776_issn, '776 (subfield x) to Symphony 022 or 776' %>
-    <%= f.check_box :match_opts, { :multiple => true }, '024_isbn', nil %>
-    <%= f.label :match_opts_024_isbn, '024 (subfield a,z) to Symphony 020 or 776' %>
-  </div>
-
-<h2>Processing Information</h2>
-  <div class="field">
-    <%= f.label 'Symphony URL Destination' %>
-    <%= f.select :url_field, ['856', '956'] %>
-  </div>
-  <div class="field">
-    <%= f.label 'Vendor ID Field (Read)' %>
-    <%= f.select :vendor_id_read, ['001', '090'] %>
-  </div>
-  <div class="field">
-    <%= f.label 'Add Access Restriction Note' %>
-    <%= f.select :access_note, ['No', 'Yes'] %>
-  </div>
-  <div class="field">
-    <%= f.label 'Create/Update 040 with CSt' %>
-    <%= f.select :update_040, ['No', 'Yes'] %>
-  </div>
-  <div class="field">
-    <%= f.label 'Vendor Cataloging Code for 040' %>
-    <%= f.text_field :vnd_catcode %>
-  </div>
-  <div class="field">
-    <%= f.label 'Export Record to OCLC' %>
-    <%= f.select :export_note, ['No', 'Yes'] %>
-  </div>
-  <div class="field">
-    <%= f.label 'Export Record to Backstage' %>
-    <%= f.select :export_auth, ['No', 'Yes - Weekly'] %>
-  </div>
-  <div class="field">
-    <%= f.label 'Date cataloged for new records' %>
-    <%= f.select :date_cat, ['Today', 'Never'] %>
-  </div>
-  <div class="field">
-    <%= f.label 'Holding Code' %>
-    <%= f.select :holding_code, ['LAW-INT-H', 'SUL-INT-H'] %>
-  </div>
-  <div class="field">
-    <%= f.label 'MARC Encoding Level' %>
-    <%= f.select :encoding_level, ['ASIS', ' ', '1', '2', '3', '4', '5', '7', '8', 'u', 'z'] %>
-  </div>
-  <div class="field">
-    <%= f.label 'Custom Junktag File Name' %>
-    <%= f.text_field :junktag_file %>
-  </div>
-  <div class="field">
-    <%= f.label 'Full Path of Preprocess Modify Script' %>
-    <%= f.text_field :preprocess_modify_script %>
-  </div>
-  <div class="field">
-    <%= f.label 'Full Path of Preprocess Split Script' %>
-    <%= f.text_field :preprocess_split_script %>
-  </div>
-  <div class="field">
-    <%= f.label 'Full Path of Preprocess Put in AFS Script' %>
-    <%= f.text_field :preprocess_put_script %>
-  </div>
-
-<h2>Other</h2>
-<div class="field">
-  <%= f.label 'Extra email Addresses for Report Mail' %>
-  <%= f.text_field :rpt_mail %>
 </div>
-<div class="field">
-  <%= f.label 'Comments' %>
-  <%= f.text_area :comments, rows: 4 %>
+
+<div class="table">
+  <div class="tr">
+    <div class="td"><h3>Pickup Information</h3></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label :data_pickup_type %></div>
+    <div class="td"><%= f.select :data_pickup_type, ['FTP', 'AFS', 'FTP to AFS'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><h4>Option for "AFS" and "FTP to AFS" Data Pickup Types</h4></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'AFS Directory Path' %></div>
+    <div class="td"><%= f.text_field :afs_path %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><h4>Option for "FTP to AFS" Data Pickup Type</h4></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'FTP Download Directory Path' %></div>
+    <div class="td"><%= f.text_field :put_file_loc %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><h4>Options for "FTP" and "FTP to AFS" Data Pickup Types</h4></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label :ftp_server %></div>
+    <div class="td"><%= f.text_field :ftp_server %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label :ftp_user %></div>
+    <div class="td"><%= f.text_field :ftp_user %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label :ftp_password %></div>
+    <div class="td"><%= f.text_field :ftp_password %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'FTP Remote Directory' %></div>
+    <div class="td"><%= f.text_field :ftp_directory %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'FTP File Name Pattern (Perl regex)' %></div>
+    <div class="td"><%= f.text_field :ftp_file_prefix %></div>
+  </div>
+</div>
+
+<div class="table">
+  <div class="tr">
+    <div class="td"><h2>Rules for Create New or Merge URL</h2></div>
+  </div>
+  <div class="tr">
+    <div class="td"><h4>Create New Record or Merge URL Field</h4></div>
+    <div class="td">
+      <ul>
+        <div class="li">
+          <li>
+            <%= f.radio_button :proc_type, "newonly" %>
+            <%= f.label :proc_type_newonly, "New only Always create new or overlay, no search for matching print record in Symphony" %>
+          </li>
+        </div>
+        <div class="li">
+          <li>
+            <%= f.radio_button :proc_type, "mergenew" %>
+            <%= f.label :proc_type_mergenew, "Merge or New Create new only if no overlay match or merge match with field(s) below" %>
+          </li>
+        </div>
+        <div class="li">
+          <li>
+            <%= f.radio_button :proc_type, "mergeonly" %>
+            <%= f.label :proc_type_mergeonly, "Merge only Never create new, merge URL if match found with field(s) below" %>
+          </li>
+        </div>
+        <div class="li">
+          <li>
+            <%= f.radio_button :proc_type, "ckeymerge" %>
+            <%= f.label :proc_type_ckeymerge, "CKEY-URL Merge Merge URL from ckey-URL input list" %>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <div class="tr">
+    <div class="td"><h4>Fields to Match Incoming to Symphony Records</h4>
+      <p><em>At least one required if "Merge or New" or "Merge only" selected above. Not used in "New only" or "CKEY-URL Merge"</em></p>
+    </div>
+    <div class="td">
+      <ul>
+        <li>
+          <%= f.check_box :match_opts, { :multiple => true }, '020', nil %>
+          <%= f.label :match_opts_020, '020 (subfield a,z) to Symphony 020 or 776' %>
+        </li>
+        <li>
+          <%= f.check_box :match_opts, { :multiple => true }, '776_isbn', nil %>
+          <%= f.label :match_opts_776_isbn, '776 (subfield z) to Symphony 020 or 776' %>
+        </li>
+        <li>
+          <%= f.check_box :match_opts, { :multiple => true }, '022', nil %>
+          <%= f.label :match_opts_022, '022 (subfield a,y,z) to Symphony 022 or 776' %>
+        </li>
+        <li>
+          <%= f.check_box :match_opts, { :multiple => true }, '776_issn', nil %>
+          <%= f.label :match_opts_776_issn, '776 (subfield x) to Symphony 022 or 776' %>
+        </li>
+        <li>
+          <%= f.check_box :match_opts, { :multiple => true }, '024_isbn', nil %>
+          <%= f.label :match_opts_024_isbn, '024 (subfield a,z) to Symphony 020 or 776' %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="table">
+  <div class="tr">
+    <div class="td"><h2>Processing Information</h2></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Symphony URL Destination' %></div>
+    <div class="td"><%= f.select :url_field, ['856', '956'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Vendor ID Field (Read)' %></div>
+    <div class="td"><%= f.select :vendor_id_read, ['001', '090'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Add Access Restriction Note' %></div>
+    <div class="td"><%= f.select :access_note, ['No', 'Yes'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Create/Update 040 with CSt' %></div>
+    <div class="td"><%= f.select :update_040, ['No', 'Yes'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Vendor Cataloging Code for 040' %></div>
+    <div class="td"><%= f.text_field :vnd_catcode %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Export Record to OCLC' %></div>
+    <div class="td"><%= f.select :export_note, ['No', 'Yes'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Export Record to Backstage' %></div>
+    <div class="td"><%= f.select :export_auth, ['No', 'Yes - Weekly'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Date cataloged for new records' %></div>
+    <div class="td"><%= f.select :date_cat, ['Today', 'Never'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Holding Code' %></div>
+    <div class="td"><%= f.select :holding_code, ['LAW-INT-H', 'SUL-INT-H'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'MARC Encoding Level' %></div>
+    <div class="td"><%= f.select :encoding_level, ['ASIS', ' ', '1', '2', '3', '4', '5', '7', '8', 'u', 'z'] %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Custom Junktag File Name' %></div>
+    <div class="td"><%= f.text_field :junktag_file %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Full Path of Preprocess Modify Script' %></div>
+    <div class="td"><%= f.text_field :preprocess_modify_script %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Full Path of Preprocess Split Script' %></div>
+    <div class="td"><%= f.text_field :preprocess_split_script %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Full Path of Preprocess Put in AFS Script' %></div>
+    <div class="td"><%= f.text_field :preprocess_put_script %></div>
+  </div>
+</div>
+
+<div class="table">
+  <div class="tr">
+    <div class="td"><h2>Other</h2></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Extra email Addresses for Report Mail' %></div>
+    <div class="td"><%= f.text_field :rpt_mail %></div>
+  </div>
+  <div class="tr">
+    <div class="td"><%= f.label 'Comments' %></div>
+    <div class="td"><%= f.text_area :comments, rows: 4 %></div>
+  </div>
 </div>
 
   <div class="actions">

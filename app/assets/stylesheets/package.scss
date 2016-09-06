@@ -6,3 +6,20 @@
 @import 'modules/top-navbar';
 @import 'modules/forms';
 @import 'modules/sorting';
+
+.table {
+  display:table;
+  width: 100%;
+}
+
+.tr {
+  display:table-row;
+}
+
+.td {
+  display:table-cell;
+}
+
+.li {
+  display: inline-flex;
+}
